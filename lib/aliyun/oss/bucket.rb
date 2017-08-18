@@ -620,7 +620,7 @@ module Aliyun
         signature = sign(string_to_sign)
         query_string =
           query.merge('Signature' => CGI.escape(signature))
-               .map { |k, v| "#{k}=#{v}" }.sort.join('&')
+          .map { |k, v| "#{k}=#{v}" }.sort.join('&')
 
         link_char = url.include?('?') ? '&' : '?'
         [url, query_string].join(link_char)
